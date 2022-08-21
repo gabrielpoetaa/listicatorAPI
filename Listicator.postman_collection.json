@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "a0e6ac16-cdd0-440c-81ea-6c3b4935f1cc",
+		"name": "Listicator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22507118"
+	},
+	"item": [
+		{
+			"name": "Heartbeat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ListicatorURL}}/heartbeat",
+					"host": [
+						"{{ListicatorURL}}"
+					],
+					"path": [
+						"heartbeat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ListicatorURL}}/lists",
+					"host": [
+						"{{ListicatorURL}}"
+					],
+					"path": [
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New List",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n        {\n            \"guid\": \"1001\",\n            \"title\": \"ListExample\",\n            \"description\": \"This is an example of a list\",\n            \"createdDate\": \"2017-07-19-15-53-14\",\n            \"amendedDate\": \"2017-07-19-15-53-14\"\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ListicatorURL}}/lists",
+					"host": [
+						"{{ListicatorURL}}"
+					],
+					"path": [
+						"lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ListicatorURL}}/users",
+					"host": [
+						"{{ListicatorURL}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User's detail",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ListicatorURL}}/users/superadmin",
+					"host": [
+						"{{ListicatorURL}}"
+					],
+					"path": [
+						"users",
+						"superadmin"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New User",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ListicatorURL}}/users/",
+					"host": [
+						"{{ListicatorURL}}"
+					],
+					"path": [
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "gabriel",
+							"value": "123456",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "password",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ListicatorURL",
+			"value": "http://localhost:4567/listicator/"
+		}
+	]
+}
